@@ -1,26 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Qe4-Z0-uot">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Table View Controller-->
+        <scene sceneID="lUY-0l-xbP">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="Qe4-Z0-uot" customClass="TableViewController" customModule="Custom_Cell" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" id="joZ-ZO-gdj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="98" id="Og3-tq-23X" customClass="CustomTableViewCell" customModule="Custom_Cell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="98"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Og3-tq-23X" id="pj9-rQ-nK0">
+                                    <frame key="frameInset" width="375" height="97"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EEE-od-gqv">
+                                            <connections>
+                                                <action selector="switchChanged:" destination="Og3-tq-23X" eventType="valueChanged" id="JJT-94-3wk"/>
+                                            </connections>
+                                        </switch>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rH1-0B-9HC">
+                                            <segments>
+                                                <segment title="First"/>
+                                                <segment title="Second"/>
+                                                <segment title="Three"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="segmentedControlChnaged:" destination="Og3-tq-23X" eventType="valueChanged" id="BoD-mm-4O5"/>
+                                            </connections>
+                                        </segmentedControl>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-Lv-wQR">
+                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rH1-0B-9HC" firstAttribute="bottom" secondItem="pj9-rQ-nK0" secondAttribute="bottomMargin" id="3dV-91-WKr"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="rH1-0B-9HC" secondAttribute="trailing" constant="20" id="4SS-JB-ZJi"/>
+                                        <constraint firstItem="Kkh-Lv-wQR" firstAttribute="leading" secondItem="pj9-rQ-nK0" secondAttribute="leadingMargin" constant="13" id="9gK-tO-vBQ"/>
+                                        <constraint firstItem="rH1-0B-9HC" firstAttribute="leading" secondItem="Kkh-Lv-wQR" secondAttribute="trailing" constant="20" id="Khu-KI-zcw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Kkh-Lv-wQR" secondAttribute="bottom" constant="24" id="T4t-eC-IWW"/>
+                                        <constraint firstItem="EEE-od-gqv" firstAttribute="top" secondItem="pj9-rQ-nK0" secondAttribute="topMargin" constant="25" id="YzG-cd-Lah"/>
+                                        <constraint firstItem="Kkh-Lv-wQR" firstAttribute="top" secondItem="pj9-rQ-nK0" secondAttribute="topMargin" constant="24" id="jhH-rH-1tk"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="EEE-od-gqv" secondAttribute="bottom" constant="25" id="m8z-SU-TNg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="EEE-od-gqv" secondAttribute="trailing" constant="11" id="qAj-t5-CHD"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="myLabel" destination="Kkh-Lv-wQR" id="6Ja-2m-h9Y"/>
+                                    <outlet property="mySwitch" destination="EEE-od-gqv" id="l2L-He-aKd"/>
+                                    <outlet property="segmentedControl" destination="rH1-0B-9HC" id="FTN-hN-NjT"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qe4-Z0-uot" id="SYg-oq-xlV"/>
+                            <outlet property="delegate" destination="Qe4-Z0-uot" id="lJJ-TT-faa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Zi-KW-9P0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="463" y="-342"/>
         </scene>
     </scenes>
 </document>
